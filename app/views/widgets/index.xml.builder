@@ -5,8 +5,8 @@ xml.rsp stat: 'ok' do
       xml.widget id: widget.identifier do
         xml.title widget.title
         xml.description widget.description
-        xml.compression size: 0, type: 'zip' # TODO
-        xml.download 'http://get-it-from-here.com' # TODO
+        xml.compression size: widget.package_file_size, type: 'zip'
+        xml.download absolute_attachment_url widget.package
       end
     end
   end
