@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130613093136) do
+ActiveRecord::Schema.define(version: 20130613135532) do
 
   create_table "widgets", force: true do |t|
     t.string   "identifier"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20130613093136) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "package_file_name"
+    t.string   "package_content_type"
+    t.integer  "package_file_size"
+    t.datetime "package_updated_at"
   end
 
 end
