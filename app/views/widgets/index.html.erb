@@ -1,31 +1,27 @@
-<h1>Listing widgets</h1>
+<h1>Widgets</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Identifier</th>
       <th>Title</th>
       <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th>Actions</th>
     </tr>
   </thead>
-
   <tbody>
     <% @widgets.each do |widget| %>
       <tr>
-        <td><%= widget.identifier %></td>
-        <td><%= widget.title %></td>
+        <td><%= link_to widget.title, widget %></td>
         <td><%= widget.description %></td>
-        <td><%= link_to 'Show', widget %></td>
-        <td><%= link_to 'Edit', edit_widget_path(widget) %></td>
-        <td><%= link_to 'Destroy', widget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= widget.identifier %></td>
+        <td>
+          <%= link_to 'Edit', edit_widget_path(widget) %> |
+          <%= link_to 'Destroy', widget, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= link_to 'New Widget', new_widget_path %>
